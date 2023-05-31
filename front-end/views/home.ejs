@@ -1,0 +1,15 @@
+<%- include('header'); %>
+
+<main>
+    hello home 
+
+    <% if(locals.data) { %>
+
+        <h1><%= data.lastName %></h1>
+        <h1><%= data.email %></h1>
+        <h1><%= data.role %></h1>
+        
+    <% } %>
+</main>
+
+<%- include('footer'); %>

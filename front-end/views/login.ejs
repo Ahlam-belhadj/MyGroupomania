@@ -1,0 +1,39 @@
+<%- include('header'); %>
+
+<main>
+<form action="">
+    <div class="creation_compte">
+        <div class="title">
+            <div class="creation_title">
+                <p>Se connecter</p>
+            </div>
+            <div class="deja-1compte">
+                <p>Vous n'avez pas de compte?</p>
+                <a href="#" class="red">Incrivez-vous ici.</a>
+            </div>
+        </div>
+        <div class="grp_infos">
+            <div class="container_infos">
+                <div class="infos">
+                    <input type="email" placeholder="Mail">
+                </div>
+                <div class="infos">
+                    <input type="password" required pattern="[A-Za-z]{3,10}" placeholder="Mot de passe">
+                </div>
+            </div>
+        </div>
+        <div class="condition">
+            <div class="text">
+                
+                <div class="button">
+                   <input type="submit" value="Se connecter">
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+</main>
+
+<%- include('footer'); %>
