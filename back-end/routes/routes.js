@@ -1,20 +1,15 @@
 const express = require('express')
 const router = express.Router();
-const db = require('../config')
+
+const userCTRL = require('../controller/auth')
 
 
-// ---------------- USERS ROUTES API  ----------------
-router.get('/users', (req, res) => {
-    db.query('SELECT * FROM users', (error , results) => {
-      if (error){
-        console.log(error);
-        res.status(500).json({ error: ' Failed to retrieve users'});
-      }else {
-        res.status(200).json(results)
-      }
-    })
-})
+// ---------------- ----------------------------------------USERS ROUTES API  ----------------
 
+
+// -------------------s'inscrire-------------//
+router.post("/register", userCTRL.addUser);
+router.post("/login", userCTRL.login);
 
 
 

@@ -1,7 +1,7 @@
 <%- include('header'); %>
 
 <main>
-<form action="">
+<form action="/login" method="POST">
     <div class="creation_compte">
         <div class="title">
             <div class="creation_title">
@@ -15,10 +15,10 @@
         <div class="grp_infos">
             <div class="container_infos">
                 <div class="infos">
-                    <input type="email" placeholder="Mail">
+                    <input type="email" placeholder="Mail"  name="email">
                 </div>
                 <div class="infos">
-                    <input type="password" required pattern="[A-Za-z]{3,10}" placeholder="Mot de passe">
+                    <input type="password" required pattern="[A-Za-z]{3,10}" placeholder="Mot de passe" name="password">
                 </div>
             </div>
         </div>
