@@ -8,8 +8,8 @@ const userCTRL = require('../controller/auth')
 
 
 // -------------------s'inscrire-------------//
-router.post("/register", userCTRL.addUser);
-router.post("/login", userCTRL.login);
+router.post("/register", userCTRL.postUser);
+
 
 
 

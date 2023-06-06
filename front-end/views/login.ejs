@@ -1,7 +1,7 @@
 <%- include('header'); %>
 
 <main>
-<form action="/login" method="POST">
+<form action="/login" method="POST" id="formLogin">
     <div class="creation_compte">
         <div class="title">
             <div class="creation_title">
@@ -18,7 +18,9 @@
                     <input type="email" placeholder="Mail"  name="email">
                 </div>
                 <div class="infos">
-                    <input type="password" required pattern="[A-Za-z]{3,10}" placeholder="Mot de passe" name="password">
+                    <input type="text" placeholder="Mot de passe" name="password">
+                    <!-- pattern="[A-Za-z]{3,10}" -->
+                    <small id="passwordFail"></small>
                 </div>
             </div>
         </div>
@@ -32,6 +34,7 @@
         </div>
     </div>
 </form>
+
 
 
 </main>

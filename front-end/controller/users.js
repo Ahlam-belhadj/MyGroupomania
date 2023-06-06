@@ -26,8 +26,6 @@ const url = "http://localhost:3000/users";
 
  }
 
-
-
  function generateToken(user) {
     const payload = {
       id: user.id,
@@ -46,23 +44,24 @@ const url = "http://localhost:3000/users";
     console.log(req.body);
 
     // Insérer les données dans la base de données
-    const { lastname, password, firstname, email } = req.body;
+    const { lastname, password, passwordconfirm, firstname, email } = req.body;
 
+    if (password || passwordconfirm ){
+      console.log(error);
+    }
   bcrypt.hash(password, 10, (error, hashedPassword) => {
     if (error) {
       console.log(error);
-      res.status(500).json({ error: "Operation failed" });
     } else {
       const newUser = { lastname, password : hashedPassword , firstname, email };
       db.query("INSERT INTO users SET ?", newUser, (error, result) => {
         if (error) {
           console.log(error);
-          res.status(500).json({ error: "Operation failed" });
         } else {
-          res.status(201).json({
-            message: "User created successfully",
-          });
+         
+          res.redirect('/profil');
         }
+
       });
     }
   });
@@ -70,7 +69,6 @@ const url = "http://localhost:3000/users";
 
 
 exports.login = async (req, res) => {
-
 const { email , password } = req.body;
 
   if(!email || !password){

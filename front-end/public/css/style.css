@@ -16,6 +16,14 @@
   }
   
   
+  .background-green {
+    background-color: #b9f6ca; /* Couleur de fond vert */
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #00695c; /* Couleur du texte */
+}
+
   /*navbar*/
   nav {
     display: flex;

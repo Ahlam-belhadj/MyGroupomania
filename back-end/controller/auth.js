@@ -1,6 +1,6 @@
 const db = require('../config')
 
-exports.addUser = (req, res) => {
+exports.postUser = (req, res) => {
 
     const { firstName, lastName, password, role, email } = req.body;
   
@@ -26,3 +26,5 @@ exports.addUser = (req, res) => {
       }
     });
 }
+
+
