@@ -1,7 +1,9 @@
 <%- include('header'); %>
+</head>
+<%- include('naviguation'); %>
 
 <main>
-<form action="/login" method="POST" id="formLogin">
+<form action="http://localhost:3000/login" method="POST">
     <div class="creation_compte">
         <div class="title">
             <div class="creation_title">
@@ -18,9 +20,7 @@
                     <input type="email" placeholder="Mail"  name="email">
                 </div>
                 <div class="infos">
-                    <input type="text" placeholder="Mot de passe" name="password">
-                    <!-- pattern="[A-Za-z]{3,10}" -->
-                    <small id="passwordFail"></small>
+                    <input type="password" required pattern="[A-Za-z]{3,10}" placeholder="Mot de passe" name="password">
                 </div>
             </div>
         </div>
@@ -34,7 +34,6 @@
         </div>
     </div>
 </form>
-
 
 
 </main>

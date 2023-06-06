@@ -4,71 +4,58 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const mysql = require('mysql')
 
-exports.getAllUsers = async (req, res) => {
-const url = "http://localhost:3000/users";
+// exports.getAllUsers = async (req, res) => {
+// const url = "http://localhost:3000/users";
 
-    axios.get(url)
-    .then(function (response) {
-        // handle success
-        if(response.data) {
-            const data = response.data;
-            res.render('home', {data})
-      }
-     })
-    .catch(function (error) {
-        // handle error
-       console.log(error);
-       res.render('home', {"error": "Un problem dans le serveur"})
-    })
-   .finally(function () {
-       res.render('home')
-    });
+//     axios.get(url)
+//     .then(function (response) {
+//         // handle success
+//         if(response.data) {
+//             const data = response.data;
+//             res.render('home', {data})
+//       }
+//      })
+//     .catch(function (error) {
+//         // handle error
+//        console.log(error);
+//        res.render('home', {"error": "Un problem dans le serveur"})
+//     })
+//    .finally(function () {
+//        res.render('home')
+//     });
 
- }
+//  }
 
- function generateToken(user) {
-    const payload = {
-      id: user.id,
-      email: user.email,
-      role: user.role,
-    };
-  
-    const options = {
-      expiresIn: process.env.JWT_EXPIRES_IN
-    };
-  
-    return jwt.sign(payload, process.env.JWT_SECRET, options);
-  }
+//  exports.postUser = async (req, res) => {
+//     console.log(req.body);
 
- exports.postUser = async (req, res) => {
-    console.log(req.body);
+//     // Insérer les données dans la base de données
+//     const { lastName, password, firstName, email } = req.body;
 
-    // Insérer les données dans la base de données
-    const { lastname, password, passwordconfirm, firstname, email } = req.body;
-
-    if (password || passwordconfirm ){
-      console.log(error);
-    }
-  bcrypt.hash(password, 10, (error, hashedPassword) => {
-    if (error) {
-      console.log(error);
-    } else {
-      const newUser = { lastname, password : hashedPassword , firstname, email };
-      db.query("INSERT INTO users SET ?", newUser, (error, result) => {
-        if (error) {
-          console.log(error);
-        } else {
-         
-          res.redirect('/profil');
-        }
-
-      });
-    }
-  });
-};
+//   bcrypt.hash(password, 10, (error, hashedPassword) => {
+//     if (error) {
+//       console.log(error);
+//       res.status(500).json({ error: "Operation failed" });
+//     } else {
+//       const newUser = { lastName, password : hashedPassword , firstName, email };
+//       db.query("INSERT INTO users SET ?", newUser, (error, result) => {
+//         if (error) {
+//           console.log(error);
+//           res.status(500).json({ error: "Operation failed" });
+//         } else {
+//           res.status(201).json({
+//             message: "User created successfully",
+//             test: "yeahhhhhhh"
+//           });
+//         }
+//       });
+//     }
+//   });
+// };
 
 
 exports.login = async (req, res) => {
+
 const { email , password } = req.body;
 
   if(!email || !password){
@@ -100,7 +87,6 @@ const { email , password } = req.body;
     }
   })
 }
-
 
 exports.logout = async (req, res) => {
   res.cookie('Ahlam la star', '' ,{

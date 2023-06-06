@@ -1,15 +1,30 @@
 <%- include('header'); %>
+<script src="../controller/publications.js"></script>
+</head>
+<%- include('naviguation'); %>
 
 <main>
-    hello home 
+  <h2>Crée votre post</h2>
 
-    <% if(locals.data) { %>
-
-        <h1><%= data.lastName %></h1>
-        <h1><%= data.email %></h1>
-        <h1><%= data.role %></h1>
-        
-    <% } %>
+  <form id="Publications" action="http://localhost:3000/post" method="POST">
+      <div class="field">
+          <textarea name="texte" placeholder="Saisissez un message" required></textarea>
+      </div>
+      <div class="bottom-form">
+          <button type="submit">Publier</button>
+      </div>
+  </form>
+    
+  <br>  
+  <h2>Publications</h2>
+  <form>
+    <div class="fake-post">
+        <img src="/img/dom.png" class="img-profil">
+        <textarea readonly name="text" placeholder="Bonjour, mon nom est Dominique Toretto !"></textarea>
+    </div>
+  </form>
+  <br>
+  <br>
 </main>
 
 <%- include('footer'); %>

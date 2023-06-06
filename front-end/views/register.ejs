@@ -1,7 +1,10 @@
 <%- include('header'); %>
+<script src="../controller/register.js"></script>
+</head>
+<%- include('naviguation'); %>
 
 <main>
-  <form action="/register" method="POST" id="formRegister">
+  <form id="Register" action="http://localhost:3000/register" method="POST">
     <div class="creation_compte">
       <div class="title">
         <div class="creation_title">
@@ -15,10 +18,10 @@
       <div class="grp_infos">
         <div class="container_infos">
           <div class="infos">
-            <input type="text" required pattern="[A-Za-z]{3,10}" placeholder="Nom" name="lastname">
+            <input type="text" required pattern="[A-Za-z]{3,10}" placeholder="Nom" name="lastName">
           </div>
           <div class="infos">
-            <input type="text" required pattern="[A-Za-z]{3,10}" placeholder="Prénom" name="firstname">
+            <input type="text" required pattern="[A-Za-z]{3,10}" placeholder="Prénom" name="firstName">
           </div>
           <div class="infos">
             <input type="email" placeholder="Mail" name="email">
@@ -36,7 +39,7 @@
           <input type="checkbox" id="click">
           <label for="click">J'accepte les conditions générales.</label>
           <div class="button">
-            <input type="submit" value="S'inscrire">          
+            <input type="submit" value="S'inscrire">
           </div>
         </div>
       </div>
