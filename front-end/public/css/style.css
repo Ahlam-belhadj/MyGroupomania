@@ -281,8 +281,14 @@ h4{
       color: #4E5166;
       font-weight: 800;
   }
-  /*button*/
   
+  /*details du profil*/
+  details {
+    margin-top: 3%;
+    margin-left: 20%;
+  }
+
+  /*button*/
   .text { 
     margin-top: 40px;
   }
@@ -380,3 +386,4 @@ h4{
       width: 100%;
   }
   }
+

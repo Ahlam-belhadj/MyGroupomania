@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const ejs = require('ejs');
 const path = require('path');
-const port = 8000;
 const dotenv = require('dotenv')
 const public = path.join(__dirname, 'public');
 const routePage = require('./routes/pages')
@@ -17,7 +16,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+app.listen(8000, () => {
+  console.log('Front-end');
 });
 
