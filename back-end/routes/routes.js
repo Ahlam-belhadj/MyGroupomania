@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router();
-
 const userCTRL = require('../controller/auth')
 
 
@@ -8,9 +7,11 @@ const userCTRL = require('../controller/auth')
 
 
 // -------------------s'inscrire-------------//
-router.post("/register", userCTRL.postUser);
 
 
+router.get('/logout', userCTRL.logout)
+router.post('/register',userCTRL.postUser)
+router.post('/login' ,userCTRL.login)
 
 
 // ---------------- POST ROUTES API  ----------------

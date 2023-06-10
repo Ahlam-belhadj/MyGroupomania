@@ -16,3 +16,6 @@ app.use('/', route)
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
+app.set('view engine', 'ejs');
+app.set('views', 'C:/Users/prfe9/Desktop/Groupo/front-end/views');

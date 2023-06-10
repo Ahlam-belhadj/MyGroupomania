@@ -4,21 +4,28 @@
   <form action="/register" method="POST" id="formRegister">
     <div class="creation_compte">
       <div class="title">
+        <% if (locals.messageSucces) { %>
+          <h3 style="background-color: greenyellow;"><%= locals.messageSucces %></h3> 
+        <% } %>
+        <% if (locals.messageError) { %>
+          <h3 style="background-color: rgb(189, 35, 104);"><%= locals.messageError %></h3> 
+        <% } %>
         <div class="creation_title">
+          
           <p>S'inscrire</p>
         </div>
         <div class="deja-1compte">
           <p>Vous avez déjà un compte?</p>
-          <a href="#" class="red">Identifiez-vous ici.</a>
+          <a href="/front-end/views/login.ejs" class="red">Identifiez-vous ici.</a>
         </div>
       </div>
       <div class="grp_infos">
         <div class="container_infos">
           <div class="infos">
-            <input type="text" required pattern="[A-Za-z]{3,10}" placeholder="Nom" name="lastname">
+            <input type="text" required pattern="[A-Za-z]{3,10}" placeholder="Nom" name="lastName">
           </div>
           <div class="infos">
-            <input type="text" required pattern="[A-Za-z]{3,10}" placeholder="Prénom" name="firstname">
+            <input type="text" required pattern="[A-Za-z]{3,10}" placeholder="Prénom" name="firstName">
           </div>
           <div class="infos">
             <input type="email" placeholder="Mail" name="email">

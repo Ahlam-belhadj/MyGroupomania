@@ -11,13 +11,13 @@ const flash = require('connect-flash');
 dotenv.config({path:'../back-end/.env'})
 
 app.use(express.static(public));
-
+app.use(flash());
 app.use(express.urlencoded({ extended: true }));
 app.use('/', routePage)
-app.use(flash());
+app.use('/auth' , require('../back-end/routes/routes') )
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', 'C:/Users/prfe9/Desktop/Groupo/front-end/views');
 
 
 app.listen(port, () => {
