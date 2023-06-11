@@ -20,12 +20,13 @@ function generateToken(user) {
 exports.postUser = (req, res) => {
 
     const { firstName, lastName, password,  email , confirmdp} = req.body;
-    if (password !== confirmdp) {
-      res.status(500).json({ error: "les mdp ne sont pas pareils" });
-    }
+    
     
   console.log(req.body);
     bcrypt.hash(password, 10, (error, hashedPassword) => {
+      if (password !== confirmdp) {
+        res.status(500).json({ error: "les mdp ne sont pas pareils" });
+      }
       if (error) {
         console.log(error);
         res.status(500).json({ error: "Operation bcrypt failed" });
